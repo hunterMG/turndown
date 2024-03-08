@@ -1,0 +1,41 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        // {
+        //     "type": "node",
+        //     "request": "launch",
+        //     "name": "js-test",
+        //     "skipFiles": [
+        //         "<node_internals>/**"
+        //     ],
+        //     // "program": "${workspaceFolder}/lib/turndown.cjs.js"
+        //     "program": "${workspaceFolder}/test/js-test.js"
+        // },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "bare_turndown",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/test/html_to_md_bare_turndown.js",
+            "args": [
+                "--input=${workspaceFolder}/test/test.html",
+                "--output=${workspaceFolder}/test/test.md",
+            ],
+            "sourceMaps": true,
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "current file",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${file}"
+        }
+    ]
+}

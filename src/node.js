@@ -56,6 +56,8 @@ function isFlankedByWhitespace (side, node, options) {
   var isFlanked
 
   if (side === 'left') {
+    // node.previousSibling: 返回当前节点的前一个兄弟节点，没有则返回null.
+    // bs4: previous_sibling --- https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/#next-sibling-previous-sibling
     sibling = node.previousSibling
     regExp = / $/
   } else {

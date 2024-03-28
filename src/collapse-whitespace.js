@@ -47,7 +47,9 @@ function collapseWhitespace (options) {
   var node = next(prev, element, isPre)
 
   while (node !== element) {
+    // 只替换文本/CData 节点中的空白字符
     if (node.nodeType === 3 || node.nodeType === 4) { // Node.TEXT_NODE or Node.CDATA_SECTION_NODE
+      // 将多个空白字符替换为一个空格
       var text = node.data.replace(/[ \r\n\t]+/g, ' ')
 
       if ((!prevText || / $/.test(prevText.data)) &&
@@ -127,6 +129,7 @@ function next (prev, current, isPre) {
     return current.nextSibling || current.parentNode
   }
 
+  // Node.firstChild: 返回树中节点的第一个子节点，如果节点是无子节点，则返回 null。
   return current.firstChild || current.nextSibling || current.parentNode
 }
 

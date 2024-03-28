@@ -238,6 +238,7 @@ rules.code = {
 
     var extraSpace = /^`|^ .*?[^ ].* $|`$/.test(content) ? ' ' : ''
     var delimiter = '`'
+    // 下面的正则表达式匹配一个/多个连续的反引号字符, /gm 全局 多行
     var matches = content.match(/`+/gm) || []
     while (matches.indexOf(delimiter) !== -1) delimiter = delimiter + '`'
 
